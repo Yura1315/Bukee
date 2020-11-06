@@ -6,6 +6,8 @@
 @import "base/general";
 @import "../blocks/modules";
 
+$light-color: #fff;
+$accent-color: #65e496;
 
 body {
     font-family: 'Roboto Slab', serif;
@@ -15,24 +17,105 @@ body {
     background-image: url(../img/bg-main.png);
     background-repeat: no-repeat;
     background-size: cover;
+    color: $light-color;
+    padding-bottom: 50px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 38px;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-bottom: 166px;
     &__logo {
         background-image: url(../img/Logo.svg);
         display: block;
         width: 137px;
         height: 28px;
+
     }
     &-list {
         list-style-type: none;
         display: flex;
         justify-content: flex-end;
+        font-family: 'Open Sans', serif;
         &__item {
-            margin-left: 15px;
+            margin-left: 22px;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+            &:hover {
+                border-bottom: 3px solid $accent-color;
+            }
         }
+        &__item.active {
+            border-bottom: 3px solid $accent-color;
+        }
+        &__link {
+            text-decoration: none;
+            color: $light-color;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+.wrap {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.block-text {
+    flex-basis: calc(90% - 500px);
+    &__name {
+        font-family: 'Open Sans', serif;
+        font-size: 18px;
+        letter-spacing: 0.7px;
+        margin-bottom: 30px;
+    }
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        margin-bottom: 40px;
+
+        span {
+            display: block;
+            color: $accent-color;
+            font-size: 18px;
+            letter-spacing: 0.9px;
+            margin-top: 9px;
+        }
+    }
+    &__description{
+        font-family: 'Open Sans', serif;
+        font-size: 15px;
+        margin-bottom: 24px;
+        letter-spacing: 0.7px;
+    }
+    &__btn {
+        display: block;
+        background-color: $accent-color;
+        text-decoration: none;
+        color: $light-color;
+        max-width: 250px;
+        border-radius: 3px;
+        text-align: center;
+        margin-top: 48px;
+        padding: 14px 0;
+        letter-spacing: 0.7px;
+    }
+}
+
+.block-book {
+    display: flex;
+    justify-content: flex-start;
+    &-demo {
+        background-image: url(../img/book-svg.svg);
+        display: block;
+        width: 500px;
+        height: 643px;
+        background-repeat: no-repeat;
+        flex-basis: 500px;
     }
 }
